@@ -1,20 +1,22 @@
 const express = require('express')
 const router = express.Router()
 
+const productos = require('./productos')
 
 router.get('/', (req, res)=>{
-    res.send('Funcona! este sería el index')
+    console.log('Consulta al index');
+    res.render('index')
 })
 
 router.get('/productos', (req, res)=>{
-    res.send('Lista de productos')
+    res.render('views/productos', {productos: productos.all() })
 })
 
 router.get('/productos/:id', (req, res)=>{
-    res.send('Producto: ' + req.params.id)
+    let contexto = { producto: productos.find(req.params.id) }
+    console.log(`Ruta coon parametros id del id: ${req.params.id}`);
+    res.render('views/show', contexto)
 })
-
-
 
 
 module.exports = router;

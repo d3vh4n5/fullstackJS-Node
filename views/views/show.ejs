@@ -1,0 +1,7 @@
+<% if(producto) { %>
+    <h1>Esta es la vista de productos pero con parámetros</h1>
+    <h3>Enviaste el producto: <%= producto.id %></h3>
+    <h4><%= producto.name %></h2>
+<% } else {%>
+    <h2 style="color: red" >Producto inexistente</h2>
+<% } %>

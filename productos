@@ -1,0 +1,18 @@
+const productos = [
+    {id: 1, name: 'Producto 1'},
+    {id: 2, name: 'Producto 2'},
+    {id: 3, name: 'Producto 3'},
+];
+
+const all = () => {
+    return productos;
+}
+
+const find = (id) =>{
+    return productos.find(producto => producto.id == id);
+}
+
+module.exports = {
+    all,
+    find
+}
